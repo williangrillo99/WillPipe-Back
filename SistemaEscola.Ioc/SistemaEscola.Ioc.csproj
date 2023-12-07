@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaEscola.Aplicacao\SistemaEscola.Aplicacao.csproj" />
+    <ProjectReference Include="..\SistemaEscola.Dominio\SistemaEscola.Dominio.csproj" />
+    <ProjectReference Include="..\SistemaEscola.Infra\SistemaEscola.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
