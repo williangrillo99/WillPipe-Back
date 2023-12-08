@@ -14,6 +14,6 @@ namespace SistemaEscola.Aplicacao.Cartoes.Interface
         Task<CartaoResponse> Atualizar(CartaoMoverRequest request);
         Task<List<Cartao>> ListarTodos(int Idboard);
         Task<CartaoResponse> Editar(int Idboard, CartoesRequest request);
-
+        Task Deletar(int IdCartao);
     }
 }

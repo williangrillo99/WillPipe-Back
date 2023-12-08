@@ -166,13 +166,25 @@ namespace SistemaEscola.Aplicacao.Cartoes
                 cartao.Titulo = request.Titulo;
                 cartao.DataInicio = request.DataInicio;
                 cartao.Descricao = request.Descricao;
-                cartao.DataFim = request.DataInicio;
+                cartao.DataFim = request.dataFim;
                 repositorioGenerico.AtualizarAsync(cartao);
             }
 
             await repositorioGenerico.SalvarAsync();
             return mapper.Map<CartaoResponse>(cartao);
 
+        }
+
+        public async Task Deletar(int IdCartao)
+        {
+            var cartao = await repositorioGenerico.RecuperarPorIdAsync(IdCartao);
+
+            if(cartao != null)
+            {
+               repositorioGenerico.DeletarAsync(cartao);
+
+                await repositorioGenerico.SalvarAsync();
+            }
         }
     }
 }

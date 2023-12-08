@@ -82,7 +82,7 @@ namespace SistemaEscola.Infra.Repositorio
       
             IQueryable<Cartao> cartao = appDbContext.Cartaos.AsQueryable();
 
-            var teste  = cartao.Where(x => colunas.Any(y => y == x.Coluna.Id)).ToList();
+            var teste  = cartao.Where(x => colunas.Any(y => y == x.Coluna.Id)).Include(x => x.Coluna).ToList();
             return teste;
         }
 

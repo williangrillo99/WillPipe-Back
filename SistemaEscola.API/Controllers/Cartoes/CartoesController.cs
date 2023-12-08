@@ -68,5 +68,14 @@ namespace SistemaEscola.API.Controllers.Cartoes
 
             return Ok(cartao);
         }
+
+        [Route("Deletar/{id}")]
+        [HttpDelete]
+        public async Task<ActionResult<Cartao>> Deletar(int id)
+        {
+            await cartaoAppServico.Deletar(id);
+
+            return Ok();
+        }
     }
 }
